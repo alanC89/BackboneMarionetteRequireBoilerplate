@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "dependencies": {
+    "backbone": "1.1.2",
+    "backbone.marionette": "2.4.1",
+    "jquery": "1.11.2",
+    "underscore": "1.6.0",
+    "requirejs": "2.1.15",
+    "requirejs-text": "2.0.12"
+  }
+}
