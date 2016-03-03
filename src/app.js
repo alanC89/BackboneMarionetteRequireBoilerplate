@@ -2,17 +2,14 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'marionette'
-
-], function($, _, Backbone, Marionette) {
+  'marionette',
+  'collections/userCollection',
+  'views/userListView'
+], function($, _, Backbone, Marionette, UserCollection, UserListView) {
   'use strict';
 
   // Creates a new Marionette application. 
   var App = new Marionette.Application();
-
-  App.StaticView = Marionette.ItemView.extend({
-    template: "#static-template"
-  });
 
   App.on("before:start", function(){
         var RegionContainer = Marionette.LayoutView.extend({
@@ -27,8 +24,23 @@ define([
   });
 
   App.on("start", function(){
-    var staticView = new App.StaticView();
-    App.regions.main.show(staticView);
+    var users = new UserCollection([
+      {
+        name: "Bob"
+      },
+      {
+        name: "Alice"
+      },
+      {
+        name: "Charlie"
+      }
+    ]);
+
+    var userListView = new UserListView({
+      collection: users
+    });
+
+    App.regions.main.show(userListView);
   });
 
   // Add the main region, that will hold the page layout.

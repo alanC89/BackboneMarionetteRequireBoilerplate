@@ -14,7 +14,8 @@ require.config({
     jquery: '../node_modules/jquery/dist/jquery',
     underscore: '../node_modules/underscore/underscore',
     backbone: '../node_modules/backbone/backbone',
-    marionette: '../node_modules/backbone.marionette/lib/backbone.marionette'
+    marionette: '../node_modules/backbone.marionette/lib/backbone.marionette',
+    text: '../node_modules/requirejs-text/text'
   },
 
   shim: {
